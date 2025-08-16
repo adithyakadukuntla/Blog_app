@@ -1,0 +1,24 @@
+:root{
+  --light-grey:#f1f2f3;
+  --medium-grey:#d3d1d1;
+  --light-dark-grey:#808080;
+  --crimson-red:#dc143c;
+  --light-olive:#bcb88a;
+  --dark-green:rgb(82, 100, 53);
+  --dark-maroon:#994570;
+  --mid-blue:#1e4c6d;
+  --dark-yellow:#fff206;
+  --light-color:#2ab7ca;
+  --light-orange:rgb(179, 129, 28);
+}
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,139 @@
+##user registration
+post http://localhost:5000/user-api/register
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"ravi",
+    "password":"ravi",
+    "email":"ravi@mail.com"
+}
+
+###user login req
+post http://localhost:5000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"ravi",
+    "password":"ravi"
+    
+}
+
+###author registration
+post http://localhost:5000/author-api/register
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"bhanu",
+    "password":"bhanu",
+    "email":"bhanu@mail.com"
+}
+
+###author login
+post http://localhost:5000/author-api/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"bhanu",
+    "password":"bhanu"
+   
+}
+
+###
+post http://localhost:5000/author-api/new-article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of javascript",
+    "category":"programming",
+    "content":"JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.[11] It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"${{$datetime iso8601}}",
+    "username":"bhanu",
+    "comments":[ ],
+    "status":true
+}
+
+
+
+### read articles by authors username
+get http://localhost:5000/author-api/articles/bhanu
+
+
+### edit the posts
+put http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"1709219392",
+    "title":"Fundamentals of javascript",
+    "category":"programming",
+    "content":"JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.[11] It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"${{$datetime iso8601}}",
+    "username":"adithya",
+    "comments":[ ],
+    "status":true
+}
+
+
+### read articles by author's username
+get http://localhost:5000/author-api/articles/adithya
+
+### edit article
+put http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+   "articleId":"1709219392",
+   "title":"Fundamentals of JavaScript",
+   "category":"programming",
+   "content":" variable parameter lists, function variables, dynamic script creation object introspection (via for...in and Object utilities, and source-code recovery JavaScript functions store their source text and can be retrieved ",
+   "dateOfCreation":"2024-02-29T15:10:46.646Z",
+   "dateOfModification":"{{$datetime iso8601}}",
+   "username":"adithya",
+   "comments": [ ],
+   "status":true
+   
+}
+
+
+### soft delete(update) of an article by id
+put http://localhost:5000/author-api/article/1709298676
+Content-Type: application/json
+
+{
+   "articleId":"1709298676",
+   "title":"Fundamentals of JavaScript",
+   "category":"programming",
+   "content":" variable parameter lists, function variables, dynamic script creation object introspection (via for...in and Object utilities, and source-code recovery JavaScript functions store their source text and can be retrieved ",
+   "dateOfCreation":"2024-02-29T13:54:52.963Z",
+   "dateOfModification":"2024-02-29T14:18:34.838Z",
+   "username":"bhanu",
+   "comments": [ ],
+   "status":false
+   
+}
+
+
+### read articles of all authors by a user
+get  http://localhost:5000/user-api/articles
+
+
+
+
+### write comment by user
+post http://localhost:5000/user-api/comment/1709219392
+Content-Type: application/json
+
+{
+    "username":"adithya",
+    "comment":"Looking like a Wow"
+}
+
+
+
