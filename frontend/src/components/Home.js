@@ -84,39 +84,39 @@ let navigate=useNavigate()
 export default Home;
 
 
-{/* <div>       
-  {loading ?():(
+// {/* <div>       
+//   {loading ?():(
   
-    {articlesList.length===0?(
-        <p className='fs-3 text-center text-info'>
-    No articles Found
-    </p> 
-     ):(   
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4 p-4">
-            {articlesList.map((article)=>(
-                <div className="col" key={article.articleId}>
-                <div className="card h-100 fs-5">
-                <div className="card-header">
-                    <p className="my-auto"><FaRegUserCircle/>  {article.username}</p>
-                    </div>
-                    <div className="card-body mb-1">
-                        <h5 className='card-title ' style={{color:'var(--mid-blue)'}} >{article.title}</h5>
-                        <p className="card-text">{article.content.substring(0,100)+"...."}</p>
-                        <button className='btn ' style={{ backgroundColor:'var(--light-olive)'}} onClick={()=>readArticleByArticleId(article)} >
-                        <FcReadingEbook />  Read More
-                        </button>
-                        </div>
-                        <div className="card-footer">
-                            <small className="text-body-secondary">Last updated on {ISOtoUTC(article.dateOfModification)}</small>
-                        </div>
+//     {articlesList.length===0?(
+//         <p className='fs-3 text-center text-info'>
+//     No articles Found
+//     </p> 
+//      ):(   
+//         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4 p-4">
+//             {articlesList.map((article)=>(
+//                 <div className="col" key={article.articleId}>
+//                 <div className="card h-100 fs-5">
+//                 <div className="card-header">
+//                     <p className="my-auto"><FaRegUserCircle/>  {article.username}</p>
+//                     </div>
+//                     <div className="card-body mb-1">
+//                         <h5 className='card-title ' style={{color:'var(--mid-blue)'}} >{article.title}</h5>
+//                         <p className="card-text">{article.content.substring(0,100)+"...."}</p>
+//                         <button className='btn ' style={{ backgroundColor:'var(--light-olive)'}} onClick={()=>readArticleByArticleId(article)} >
+//                         <FcReadingEbook />  Read More
+//                         </button>
+//                         </div>
+//                         <div className="card-footer">
+//                             <small className="text-body-secondary">Last updated on {ISOtoUTC(article.dateOfModification)}</small>
+//                         </div>
                     
-                </div>
-                </div>
-            ))}
-        </div>
-        )   
+//                 </div>
+//                 </div>
+//             ))}
+//         </div>
+//         )   
          
-        )}
-       </div> 
+//         )}
+//        </div> 
     
-         */}
+//          */}

@@ -61,7 +61,7 @@ useEffect(()=>{
   return (
     <div>
     <div className='container p-1'> 
-    {authorsList.length!=0 ?(
+    {authorsList.length!==0 ?(
          <table class="table table-light table-bordered  table-hover  w-75 mx-auto pb-2 mt-3 border-black  text-center">
         <thead>
             <tr>

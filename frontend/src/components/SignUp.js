@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "./css/signup.css";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,25 @@ function signin(){
   navigate('/signin')
 }
 
-    
+useEffect(() => {
+    const passwordInput = document.getElementById("password");
+    const passwordToggle = document.getElementById("password-toggle");
+
+    if (passwordToggle) {
+      passwordToggle.addEventListener("change", function () {
+        if (passwordToggle.checked) {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      });
+
+      // Cleanup the event listener on component unmount
+      return () => {
+        passwordToggle.removeEventListener("change", () => {});
+      };
+    }
+  }, []);
 
 
   return (
@@ -118,7 +136,8 @@ function signin(){
 <label >Password</label>
         <input
           type="password"
-          className="form-control neui mb-3"
+          className="form-control  mb-3"
+          id="password"
           placeholder="password"
           autoComplete="current-password"
           
@@ -128,6 +147,18 @@ function signin(){
             maxLength: 12,
           })}
         />
+        <div className="form-check d-flex  align-items-center">
+            
+                  <input
+                    type="checkbox"
+                    className="w-auto"
+                    name="password-toggle"
+                    id="password-toggle"
+                  />
+                  <label htmlFor="user" className="form-check-label  ">
+                    Show Password
+                  </label>
+                </div>
          
           
         {errors.password?.type === "required" && (
@@ -154,7 +185,7 @@ function signin(){
           <p className="text-danger lead fs-5">email is required</p>
         )}
         <p>Already a User?
-          <Link onClick={signin}>SignIn</Link>
+          <Link onClick={signin}>  SignIn</Link>
         </p>
 
         <div className="d-flex justify-content-end " >

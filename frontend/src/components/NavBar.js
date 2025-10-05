@@ -8,7 +8,7 @@ import { FaArrowRightToBracket } from "react-icons/fa6";
 import { SiGnuprivacyguard } from "react-icons/si";
 function NavBar() {
 
-const {isPending,currentUser,errorStatus,errorMessage,loginStatus}=useSelector((state)=>state.userLogin);
+const {currentUser,loginStatus}=useSelector((state)=>state.userLogin);
 let dispatch=useDispatch();
 
 function logout(){

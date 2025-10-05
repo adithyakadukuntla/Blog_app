@@ -42,7 +42,8 @@ function AdAuthorArticles() {
         return `${date}/${day}/${year}`;
       }
   return (
-   <div>       
+   <div>    
+   {err ?(<p></p>):(<p></p>)}   
     {articlesList.length===0?(
         <p className='fs-3 text-center text-info'>
     No articles Found

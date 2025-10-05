@@ -5,15 +5,15 @@ import axios from "axios";
 export const userLoginThunk=createAsyncThunk('userLogin',async(userCred,thunkApi)=>{
     let res;
     if(userCred.userType==='user'){
-        res= await axios.post('http://localhost:5000/user-api/login',userCred)
+        res= await axios.post('/user-api/login',userCred)
 
     }
     if(userCred.userType==='author'){
-        res= await axios.post('http://localhost:5000/author-api/login',userCred)
+        res= await axios.post('/author-api/login',userCred)
 
     }
     if(userCred.userType==='admin'){
-        res= await axios.post('http://localhost:5000/admin-api/login',userCred)
+        res= await axios.post('/admin-api/login',userCred)
     
     }
     if(res.data.message==='login successfull'){
